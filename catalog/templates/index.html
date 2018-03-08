@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>  KAFEDRA</h1>
+
+<ul>
+<li><strong>Mamandyks:</strong> {{ num_mamandyks }}</li>
+<li><strong>Copies:</strong> {{ num_instances }}</li>
+<li><strong>Copies 3:</strong> {{ num_instances_available }}</li>
+<li><strong>Mugalims:</strong> {{ num_mugalims }}</li>
+</ul>
+
+<p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+
+{% endblock %}

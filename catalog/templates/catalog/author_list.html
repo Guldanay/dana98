@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Mugalim List</h1>
+
+    {% if mugalim_list %}
+    <ul>
+
+      {% for mugalim in mugalim_list %}
+      <li>
+        <a href="{{ mugalim.get_absolute_url }}">{{mugalim.first_name}},{{mugalim.last_name}}({{mugalim.date_of_birth}})</a> ({{mugalim.date_of_death}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>   </p>
+    {% endif %}       
+{% endblock %}

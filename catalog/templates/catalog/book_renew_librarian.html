@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+    <h1>Renew: {{kurs.mamandyk.title}}</h1>
+    <p>Borrower: {{kurs.borrower}}</p>
+    <p{% if kurs.is_overdue %} class="text-danger"{% endif %}>Due date: {{kurs.due_back}}</p>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+        {{ form }}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}

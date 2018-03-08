@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Borrowed mamandyks</h1>
+
+    {% if kurs_list %}
+    <ul>
+
+      {% for kurs in kurs_list %}
+      <li class="{% if kurs.is_overdue %}text-danger{% endif %}">
+        <a href="{% url 'book-detail' kurs.book.pk %}">{{kurs.mamandyk.title}}</a> ({{ kurs.due_back }})
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>...</p>
+    {% endif %}       
+{% endblock %}
